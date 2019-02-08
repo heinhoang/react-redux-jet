@@ -10,9 +10,9 @@ import { AppLayout } from './pages';
 
 const initialState = {};
 const store = configureStore({
-    initialState,
-    history,
-    createReducer
+  initialState,
+  history,
+  createReducer
 });
 
 ReactDOM.render(<App store={store} appLayout={AppLayout} history={history} />, document.getElementById('root'));

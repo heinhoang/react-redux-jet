@@ -1,9 +1,10 @@
 import { routerMiddleware } from 'connected-react-router';
 import { History } from 'history';
-import { applyMiddleware, compose, createStore, Store, Reducer } from 'redux';
+import { applyMiddleware, compose, createStore, Reducer } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import { IReducerOptions } from './reducer';
+import rootSaga from './saga';
 
 export interface IStoreConfig {
     initialState: {};
@@ -20,5 +21,6 @@ export default function configureStore({
     const middlewares = [sagaMiddleware, routerMiddleware(history)];
     const enhancers = [composeWithDevTools(applyMiddleware(...middlewares))];
     const store = createStore(createReducer(), initialState, compose(...enhancers));
+    sagaMiddleware.run(rootSaga);
     return store;
 }
