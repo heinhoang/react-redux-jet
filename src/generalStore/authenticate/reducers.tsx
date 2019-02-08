@@ -9,16 +9,23 @@ import {
 } from './constants';
 import { Action } from 'redux';
 import produce from 'immer';
-import { merge, get } from 'lodash';
+import { merge, get, toString } from 'lodash';
+
+export interface IAuthState {
+  isAuthenticated?: boolean,
+  token?: string,
+  name?: string,
+  checking?: boolean
+}
 
 const initialState = {
   isAuthenticated: false,
-  token: localStorage.getItem('token'),
-  name: null,
+  token: toString(localStorage.getItem('token')),
+  name: '',
   checking: false
 };
 
-export const authenticated = (state = initialState, action: Action) => 
+export const authenticated = (state: IAuthState = initialState, action: Action) => 
   produce(state, draft => {
     switch (action.type) {
       case SIGNUP_USER_LOADING:

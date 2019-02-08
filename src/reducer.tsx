@@ -7,7 +7,7 @@ import { authenticated } from './generalStore';
 export interface IReducerOptions {}
 
 const reducerSlices = {
-    authenticated
+  authenticated
 };
 
 /**
@@ -15,9 +15,9 @@ const reducerSlices = {
  * @param injectedReducers inject dynamic reducers
  */
 export default function createReducer(injectedReducers: IReducerOptions = reducerSlices): Reducer {
-    const rootReducer = combineReducers({
-        router: connectRouter(history),
-        ...injectedReducers,
-    });
-    return rootReducer;
+  const rootReducer = combineReducers({
+      router: connectRouter(history),
+      ...injectedReducers,
+  });
+  return rootReducer;
 }

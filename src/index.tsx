@@ -7,6 +7,7 @@ import configureStore from './store';
 import { history } from './utils';
 import createReducer from './reducer';
 import { AppLayout } from './pages';
+import { messages } from './configs';
 
 const initialState = {};
 const store = configureStore({
@@ -15,7 +16,12 @@ const store = configureStore({
   createReducer
 });
 
-ReactDOM.render(<App store={store} appLayout={AppLayout} history={history} />, document.getElementById('root'));
+ReactDOM.render(<App
+  store={store}
+  appLayout={AppLayout}
+  history={history}
+  messages={messages}
+  />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
