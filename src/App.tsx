@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { ComponentClass, FunctionComponent } from 'react';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { Switch, Route, RouteComponentProps } from 'react-router-dom';
+import { Store } from 'redux';
+import { History } from 'history';
+import { Login, NotFound } from './pages';
 import './App.css';
+import { StaticContext } from 'react-router';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+export interface IProps {
+  store: Store;
+  history: History;
+  appLayout: ComponentClass<any, any> | FunctionComponent<any> | ComponentClass<RouteComponentProps<any, StaticContext, any>, any> | FunctionComponent<RouteComponentProps<any, StaticContext, any>> | undefined;
 }
+
+const App = ({
+  store,
+  history,
+  appLayout
+}: IProps) => {
+  return (
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+          <Switch>
+              <Route exact={true} path='/' component={appLayout} />
+              <Route exact={true} path='/login' component={Login} />
+              <Route component={NotFound} />
+          </Switch>
+      </ConnectedRouter>
+        </Provider>
+  );
+};
 
 export default App;
