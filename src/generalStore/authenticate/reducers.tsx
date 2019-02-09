@@ -1,15 +1,15 @@
+import produce from 'immer';
+import { get, merge, toString } from 'lodash';
+import { Action } from 'redux';
 import {
+  LOGIN_USER_FAILURE,
   LOGIN_USER_LOADING,
   LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAILURE,
   LOGOUT_USER,
+  SIGNUP_USER_FAILURE,
   SIGNUP_USER_LOADING,
-  SIGNUP_USER_SUCCESS,
-  SIGNUP_USER_FAILURE
+  SIGNUP_USER_SUCCESS
 } from './constants';
-import { Action } from 'redux';
-import produce from 'immer';
-import { merge, get, toString } from 'lodash';
 
 export interface IAuthState {
   isAuthenticated?: boolean,
@@ -19,10 +19,10 @@ export interface IAuthState {
 }
 
 const initialState = {
+  checking: false,
   isAuthenticated: false,
-  token: toString(localStorage.getItem('token')),
   name: '',
-  checking: false
+  token: toString(localStorage.getItem('token')),
 };
 
 export const authenticated = (state: IAuthState = initialState, action: Action) => 
@@ -34,10 +34,10 @@ export const authenticated = (state: IAuthState = initialState, action: Action) 
       case SIGNUP_USER_SUCCESS:
       case LOGIN_USER_SUCCESS: {
         return merge(draft, {
+          checking: false,
           isAuthenticated: true,
-          token: get(action, 'token'),
           name: get(action, 'token'),
-          checking: false
+          token: get(action, 'token'),
         });
       }
       case SIGNUP_USER_FAILURE:

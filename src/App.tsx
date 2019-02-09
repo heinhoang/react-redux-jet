@@ -1,19 +1,23 @@
+import { ConnectedRouter } from 'connected-react-router';
+import { History } from 'history';
 import React, { ComponentClass, FunctionComponent } from 'react';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import { Switch, Route, RouteComponentProps } from 'react-router-dom';
-import { Store } from 'redux';
-import { History } from 'history';
-import { Login, NotFound } from './pages';
-import './App.css';
 import { StaticContext } from 'react-router';
-import { LanguageProvider } from './containers';
+import { Route, RouteComponentProps, Switch } from 'react-router-dom';
+import { Store } from 'redux';
+import './App.css';
+import { IMessages, LanguageProvider } from './containers';
+import { Login, NotFound } from './pages';
 
 export interface IProps {
   store: Store;
   history: History;
-  messages: object;
-  appLayout: ComponentClass<any, any> | FunctionComponent<any> | ComponentClass<RouteComponentProps<any, StaticContext, any>, any> | FunctionComponent<RouteComponentProps<any, StaticContext, any>> | undefined;
+  messages: IMessages;
+  appLayout: ComponentClass<any, any> |
+                    FunctionComponent<any> |
+                    ComponentClass<RouteComponentProps<any, StaticContext, any>, any> |
+                    FunctionComponent<RouteComponentProps<any, StaticContext, any>> |
+                    undefined;
 }
 
 const App = ({

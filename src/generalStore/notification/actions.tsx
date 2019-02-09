@@ -1,13 +1,13 @@
 import {
-    SHOW_NOTIFICATION,
-    HIDE_NOTIFICATION
+  HIDE_NOTIFICATION,
+  SHOW_NOTIFICATION
 } from './constants';
 
 export const showNotification = (type: string, text: string) => ({
-    type: SHOW_NOTIFICATION,
-    payload: { text, type },
+  payload: { text, type },
+  type: SHOW_NOTIFICATION,
 });
 
 export const hideNotification = () => ({
-    type: HIDE_NOTIFICATION,
+  type: HIDE_NOTIFICATION,
 });

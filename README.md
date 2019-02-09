@@ -42,3 +42,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Credits
+- https://medium.freecodecamp.org/loading-data-in-react-redux-thunk-redux-saga-suspense-hooks-666b21da1569
+- https://medium.com/@svyat770/fast-as-never-before-code-splitting-with-react-suspense-lazy-router-redux-webpack-4-d55a95970d11
+- https://blog.bitsrc.io/lazy-loading-react-components-with-react-lazy-and-suspense-f05c4cfde10c
+- https://blog.logrocket.com/async-rendering-in-react-with-suspense-5d0eaac886c8

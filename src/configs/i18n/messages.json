@@ -1,13 +1,13 @@
 {
-    "en": {
-        "username or email": "username or email",
-        "password": "password"
-    },
-    "fr": {
-        "Tooltip.fees": "Cliquez ici pour comprendre comment nous calculons les frais.",
-        "SubHeader.unreadCount": "Tu as {unreadCount} Nouveau {notifications}",
-        "msg.welcome": "Bonjour {name}, tu as {unreadCount, number} {unreadCount, plural, one {la message} other {le messages}}",
-        "username or email": "nom d'utilisateur ou email",
-        "password": "mot de passe"
-    }
+  "en": {
+    "username or email": "username or email",
+    "password": "password"
+  },
+  "fr": {
+    "Tooltip.fees": "Cliquez ici pour comprendre comment nous calculons les frais.",
+    "SubHeader.unreadCount": "Tu as {unreadCount} Nouveau {notifications}",
+    "msg.welcome": "Bonjour {name}, tu as {unreadCount, number} {unreadCount, plural, one {la message} other {le messages}}",
+    "username or email": "nom d'utilisateur ou email",
+    "password": "mot de passe"
+  }
 }

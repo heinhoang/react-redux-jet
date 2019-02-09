@@ -1,7 +1,7 @@
 import { Location } from 'history';
-import React, { Fragment, ReactNode, FunctionComponent } from 'react';
-import { IAuthState } from '../../generalStore';
+import React, { Fragment, FunctionComponent, ReactNode } from 'react';
 import { connect } from 'react-redux';
+import { IAuthState } from '../../generalStore';
 import { selectToken } from '../../generalStore/authenticate/selectors';
 
 export interface IProps {
