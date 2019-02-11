@@ -3,8 +3,8 @@ import {
   SHOW_NOTIFICATION
 } from './constants';
 
-export const showNotification = (type: string, text: string) => ({
-  payload: { text, type },
+export const showNotification = (type: string, message: string) => ({
+  payload: { message, type },
   type: SHOW_NOTIFICATION,
 });
 
